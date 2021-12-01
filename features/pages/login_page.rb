@@ -2,6 +2,7 @@ class LoginPage < SitePrism::Page
 
     set_url '/v2/#/login'
 
+    element :current_language, '.language-select__active'
     element :input_email, '#login_form_email_input_field'
     element :submit_button, '#login_form_submit_button'
     element :mobile_phone_radio, '#login_form_field_phone i'
@@ -9,6 +10,7 @@ class LoginPage < SitePrism::Page
     element :input_phone, '.phone-input__control'
     element :modal_error_message, '.login-error-message'
     element :login_error_message, '.login-error-message__message'
+    elements :available_languages, '.language-select__menu-item'
     elements :countries_list, '.iti__country-name'
 
     def submit_enabled?

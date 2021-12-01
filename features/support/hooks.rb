@@ -1,6 +1,9 @@
 Before do
     @login_page = LoginPage.new
-    DEVICE.eql?('desktop') ? Capybara.page.driver.browser.manage.window.maximize : Capybara.current_session.driver.browser.manage.window.resize_to(400,584)
+    @code_activation_page = CodeActivation.new
+    @login_page.load
+    @code_activation_page.load
+    DEVICE.eql?('desktop') ? Capybara.page.driver.browser.manage.window.maximize : Capybara.current_session.driver.browser.manage.window.resize_to(360,640)
 end
 
 After do |scenario|

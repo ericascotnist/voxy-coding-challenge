@@ -1,10 +1,13 @@
 
 Given ("I'm on voxy's login page") do
-    @login_page.load
+    if @login_page.current_language.text. != 'English'
+       @login_page.current_language.click
+       @login_page.available_languages.detect{ |opt| opt.text.eql?('English') }.select_option
+    end
 end
 
 Given("I type the email {string}") do |email|
-    @login_page.input_email.set(email)
+    @login_page.input_email.set email
 end
   
 Then('the submit button should be disabled') do
@@ -29,7 +32,7 @@ When('click on submit button') do
   end
   
 Then('an error message must be shown') do
-    expect(@login_page.login_error_message.text).to include('Não foi possível encontrar sua conta desta maneira.')
+    expect(@login_page.login_error_message.text).to include('Sorry, we couldn\'t find your account that way!')
 end
   
   
