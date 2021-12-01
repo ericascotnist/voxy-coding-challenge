@@ -17,7 +17,7 @@ end
 
 When ('select {string} as country') do |country|
     @login_page.button_dropdown.click
-    @login_page.countries_list.detect{ |opt| opt.text.include?(country)}.select_option
+    @login_page.countries_list.detect{ |opt| opt.text.include?(country) }.select_option
 end
 
 When('type the number {string}') do |phone_number|

@@ -1,1 +1,5 @@
-default: --format html --out=reports/report.html --format pretty
+default: -p html -p pretty -p desktop
+html: --format html --out=results/report.html
+pretty: --format pretty
+desktop: DEVICE=desktop
+mobile: DEVICE=mobile
