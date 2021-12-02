@@ -3,6 +3,15 @@
 Coding challenge for a Software Testing Engineer role at Voxy.
 The task consists of designing test cases for Voxy's login homepage with no valid credentials.
 
+
+Given the credential constraints, the automated tests simulate the following user behaviors:
+- Login with invalid email/phone
+- Login with nonexistent email/phone
+- Entering an invalid activation code
+- Entering invalid data on code activation form
+
+The detailed description of the scenarios (in natural language) can be found on `features/gherkins`.
+
 ## Installation
 
 Dependencies:
